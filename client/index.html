@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylesheet.css">
+    <title>Notes App</title>
+</head>
+<body>
+    <main>
+        <h2>Tambah Catatan</h2>
+
+        <label>Judul:</label>
+        <input type="text" id="judul-input">
+
+        <br><br>
+
+        <label>Note:</label>
+        <textarea id="note-input"></textarea>
+
+        <br><br>
+
+        <button id="add-note-btn">Save</button>
+
+        <br><br><br>
+
+        <div>
+           <input placeholder="search by judul" id="search-input">
+           <button id="search-btn">Search</button>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Judul</th>
+                    <th>Note</th>
+                    <th>Date</th>
+                    <th>Delete</th>
+                    <th>Edit</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+
+        <section hidden id="update-row">
+            <h3>Edit Catatan</h3>
+            <input type="text" id="update-judul-input">
+            <textarea id="update-note-input"></textarea>
+            <br><br>
+            <button id="update-row-btn">Update</button>
+        </section>
+    </main>
+
+    <script src="index.js"></script>
+</body>
+</html>
