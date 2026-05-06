@@ -3,7 +3,7 @@ steps:
     args:
       - "build"
       - "-t"
-      - "gcr.io/$PROJECT_ID/tcc-be-rest"
+      - "gcr.io/$PROJECT_ID/tcc-be-rest-131"
       - "-f"
       - "server/Dockerfile"
       - "server"
@@ -11,7 +11,7 @@ steps:
   - name: "gcr.io/cloud-builders/docker"
     args:
       - "push"
-      - "gcr.io/$PROJECT_ID/tcc-be-rest"
+      - "gcr.io/$PROJECT_ID/tcc-be-rest-131"
 
   - name: "gcr.io/cloud-builders/gcloud"
     args:
@@ -19,7 +19,7 @@ steps:
       - "deploy"
       - "be-rest"
       - "--image"
-      - "gcr.io/$PROJECT_ID/tcc-be-rest"
+      - "gcr.io/$PROJECT_ID/tcc-be-rest-131"
       - "--timeout"
       - "1000s"
       - "--port"
