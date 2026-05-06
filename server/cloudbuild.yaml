@@ -17,7 +17,7 @@ steps:
     args:
       - "run"
       - "deploy"
-      - "be-rest"
+      - "be-rest-131"
       - "--image"
       - "gcr.io/$PROJECT_ID/tcc-be-rest-131"
       - "--timeout"
