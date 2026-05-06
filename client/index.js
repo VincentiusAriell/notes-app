@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-    fetch('http://35.239.128.73:3000/api/notes')
+    fetch('https://be-rest-131-1079290367613.us-central1.run.app')
     .then(res => res.json())
     .then(data => loadHTMLTable(data.notes))
     .catch(err => console.log(err));
@@ -12,7 +12,7 @@ document.querySelector('tbody').addEventListener('click', function(event) {
 
 document.querySelector('#search-btn').onclick = function() {
     const value = document.querySelector('#search-input').value.toLowerCase();
-    fetch('http://35.239.128.73:3000/api/notes')
+    fetch('https://be-rest-131-1079290367613.us-central1.run.app')
     .then(res => res.json())
     .then(data => {
         const filtered = data.notes.filter(note => note.judul.toLowerCase().includes(value));
@@ -25,7 +25,7 @@ document.querySelector('#add-note-btn').onclick = function () {
     const judul = document.querySelector('#judul-input').value;
     const isi = document.querySelector('#note-input').value;
     if (!judul || !isi) return alert("Judul dan isi harus diisi");
-    fetch('http://35.239.128.73:3000/api/notes', {
+    fetch('https://be-rest-131-1079290367613.us-central1.run.app', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ judul, isi })
@@ -41,7 +41,7 @@ document.querySelector('#update-row-btn').onclick = function() {
     const judul = document.querySelector('#update-judul-input').value;
     const isi = document.querySelector('#update-note-input').value;
     if (!judul || !isi) return alert("Judul dan isi harus diisi");
-    fetch('http://35.239.128.73:3000/api/notes/' + id, {
+    fetch('https://be-rest-131-1079290367613.us-central1.run.app' + id, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ judul, isi })
@@ -52,7 +52,7 @@ document.querySelector('#update-row-btn').onclick = function() {
 };
 
 function deleteRowById(id) {
-    fetch('http://35.239.128.73:3000/api/notes/' + id, { method: 'DELETE' })
+    fetch('https://be-rest-131-1079290367613.us-central1.run.app' + id, { method: 'DELETE' })
     .then(res => res.json())
     .then(data => { if(data.success) location.reload(); else alert("Gagal menghapus catatan"); })
     .catch(err => console.log(err));
